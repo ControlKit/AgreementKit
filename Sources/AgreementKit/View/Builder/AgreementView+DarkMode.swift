@@ -44,7 +44,22 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
         let descriptionView = UITextView()
         descriptionView.isEditable = false
         descriptionView.font = config.termsDescriptionFont
-        descriptionView.text = config.termsDescription
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType:
+                        NSAttributedString.DocumentType.html]
+        if config.termsDescription.starts(with: "<"),
+           let data = config.termsDescription.data(using: String.Encoding.unicode,
+                                                         allowLossyConversion: true) {
+            if let attrStr = try? NSAttributedString(
+                data: data,
+                options: options,
+                documentAttributes: nil) {
+                descriptionView.attributedText = attrStr
+            } else {
+                descriptionView.text = config.termsDescription
+            }
+        } else {
+            descriptionView.text = config.termsDescription
+        }
         descriptionView.textColor = config.termsDescriptionColor
         descriptionView.textAlignment = .left
         descriptionView.backgroundColor = config.contentViewBackColor
