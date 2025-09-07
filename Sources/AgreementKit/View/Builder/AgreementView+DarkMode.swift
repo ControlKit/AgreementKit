@@ -148,7 +148,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: agreementLabel,
             attribute: .height,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
@@ -173,7 +173,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: termsLabel,
             attribute: .height,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: nil,
             attribute: .notAnAttribute,
             multiplier: 1,
@@ -209,7 +209,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: acceptButton,
             attribute: .top,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: descriptionView,
             attribute: .bottom,
             multiplier: 1,
@@ -247,7 +247,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: declineButton,
             attribute: .top,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: descriptionView,
             attribute: .bottom,
             multiplier: 1,
