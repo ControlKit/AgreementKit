@@ -10,7 +10,7 @@ public struct AgreementViewPresenter {
     var config: AgreementViewConfig
     public init(data: AgreementModel?, config: AgreementViewConfig) {
         self.config = config
-        if let localTitle = data?.title,
+        if let localTitle = data?.agreementTitle,
             let title = getLocalizeString(localTitle) {
             self.config.agreement = title
         }
@@ -18,7 +18,7 @@ public struct AgreementViewPresenter {
            let description = getLocalizeString(localDescription) {
             self.config.termsDescription = description
         }
-        if let localTerms = data?.terms,
+        if let localTerms = data?.termsTitle,
            let terms = getLocalizeString(localTerms) {
             self.config.terms = terms
         }
