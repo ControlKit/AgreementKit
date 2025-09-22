@@ -138,7 +138,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
             toItem: contentView,
             attribute: .top,
             multiplier: 1,
-            constant: 180).isActive = true
+            constant: 80).isActive = true
         agreementLabel.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
@@ -155,7 +155,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
             constant: 30).isActive = true
     }
     public func setTermsLabelConstraint() {
-        agreementLabel.translatesAutoresizingMaskIntoConstraints = false
+        termsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(
             item: termsLabel,
             attribute: .top,

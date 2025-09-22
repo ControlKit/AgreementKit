@@ -150,7 +150,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
             constant: 30).isActive = true
     }
     public func setTermsLabelConstraint() {
-        agreementLabel.translatesAutoresizingMaskIntoConstraints = false
+        termsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint(
             item: termsLabel,
             attribute: .top,
