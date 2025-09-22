@@ -28,7 +28,7 @@ public final class DefaultAgreementViewModel: AgreementViewModel, Agreementable 
     
     public var request: AgreementRequest {
         return AgreementRequest(
-            name: "",
+            name: "Privacy Policy",
             appId: serviceConfig.appId,
             route: serviceConfig.route,
             sdkVersion: serviceConfig.sdkVersion

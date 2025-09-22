@@ -14,8 +14,14 @@ public class AgreementService: AgreementServiceProtocol {
     public init() {}
     public func getAgreement(request: AgreementRequest) async throws -> AgreementResponse? {
         do {
-            guard let url = URL(string: request.route) else {
-                return AgreementResponse()
+            guard var urlComponents = URLComponents(string: request.route) else {
+                return nil
+            }
+            var queryItems = urlComponents.queryItems ?? []
+            queryItems.append(URLQueryItem(name: "name", value: request.name))
+            urlComponents.queryItems = queryItems
+            guard let url = urlComponents.url else {
+                return nil
             }
             var req = URLRequest(url: url)
             req.allHTTPHeaderFields = request.dictionary
