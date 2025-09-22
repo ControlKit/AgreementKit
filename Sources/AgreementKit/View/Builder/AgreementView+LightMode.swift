@@ -204,7 +204,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: acceptButton,
             attribute: .top,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: descriptionView,
             attribute: .bottom,
             multiplier: 1,
@@ -242,7 +242,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
         NSLayoutConstraint(
             item: declineButton,
             attribute: .top,
-            relatedBy: .greaterThanOrEqual,
+            relatedBy: .equal,
             toItem: descriptionView,
             attribute: .bottom,
             multiplier: 1,
