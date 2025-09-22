@@ -282,6 +282,8 @@ public class LightModeAgreementViewConfig: AgreementViewConfig {
     public override init(lang: String) {
         super.init(lang: lang)
         style = .darkMode
+        acceptButtonTitleColor = .white
+        declineButtonTitleColor = UIColor(r: 173, g: 173, b: 173)
         acceptButtonBackColor = UIColor(r: 42, g: 111, b: 196)
         declineButtonBorderColor = UIColor(r: 173, g: 173, b: 173)
         termsDescriptionColor = UIColor(r: 147, g: 147, b: 147)
