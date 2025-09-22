@@ -16,7 +16,7 @@ public struct AgreementServiceConfig {
         self.version = version
     }
     public var route: String = "https://tauri.ir/api/terms-and-conditions"
-    public var appId: String = "9fb42682-ebd0-4553-a131-2620ca7f2f63" //Bundle.main.bundleIdentifier ?? String()
+    public var appId: String = "9fee1663-e80e-46ad-8cd9-357263375a9c" //Bundle.main.bundleIdentifier ?? String()
     public var version: String = "1"//Bundle.main.releaseVersionNumber ?? String()
     public var sdkVersion: String = "1.0.0"
     public var viewConfig: AgreementViewConfig
