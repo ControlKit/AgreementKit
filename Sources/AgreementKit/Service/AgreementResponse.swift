@@ -14,16 +14,12 @@ public struct AgreementResponse: Codable {
 }
 public struct AgreementModel: Codable {
     public let id: String
-    public let name: String?
     public let agreement_title: AgreementLocalString?
     public let title: AgreementLocalString?
     public let description: AgreementLocalString?
     public let accept_button_title: AgreementLocalString?
     public let decline_button_title: AgreementLocalString?
-    public let icon: String?
-    public let link: String?
     public let version: Int?
-    public let sdk_version: String?
     public let created_at: String?
 }
 public struct AgreementLocalizedText: Codable {
