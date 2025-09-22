@@ -22,8 +22,7 @@ public struct AgreementModel: Codable {
     public let decline_button_title: AgreementLocalString?
     public let icon: String?
     public let link: String?
-    public let force: Bool?
-    public let version: String?
+    public let version: Int?
     public let sdk_version: String?
     public let created_at: String?
 }

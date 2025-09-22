@@ -27,8 +27,5 @@ class AgreementViewController: UIViewController {
                                                     config: config.viewConfig)
         view.addSubview(AgreementView)
         AgreementView.fixInView(view)
-        Task {
-            viewModel.response = try await viewModel.agreementService.getAgreement(request: viewModel.request)
-        }
     }
 }

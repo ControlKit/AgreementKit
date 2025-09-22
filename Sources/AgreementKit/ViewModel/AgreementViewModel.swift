@@ -8,30 +8,13 @@ import Foundation
 import UIKit
 
 public protocol AgreementViewModel {
-    var agreementService: AgreementServiceProtocol { get set }
-    var serviceConfig: AgreementServiceConfig { get set }
-    var response: AgreementResponse? { get set }
-    var request: AgreementRequest { get }
+    var response: AgreementResponse { get set }
 }
 
-public final class DefaultAgreementViewModel: AgreementViewModel, Agreementable {
-    public var agreementService: AgreementServiceProtocol
-    public var serviceConfig: AgreementServiceConfig
-    public var response: AgreementResponse?
+public final class DefaultAgreementViewModel: AgreementViewModel {
+    public var response: AgreementResponse
     
-    public init(serviceConfig: AgreementServiceConfig,
-                agreementService: AgreementServiceProtocol = AgreementService()
-    ) {
-        self.agreementService = agreementService
-        self.serviceConfig = serviceConfig
-    }
-    
-    public var request: AgreementRequest {
-        return AgreementRequest(
-            name: "Privacy Policy",
-            appId: serviceConfig.appId,
-            route: serviceConfig.route,
-            sdkVersion: serviceConfig.sdkVersion
-        )
+    public init(response: AgreementResponse) {
+        self.response = response
     }
 }
