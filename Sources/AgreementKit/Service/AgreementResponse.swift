@@ -10,7 +10,7 @@ import Foundation
 public typealias AgreementLocalString = [AgreementLocalizedText]
 
 public struct AgreementResponse: Codable {
-    public var data: [AgreementModel]?
+    public var data: AgreementModel
 }
 public struct AgreementModel: Codable {
     public let id: String

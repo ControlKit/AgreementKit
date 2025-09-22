@@ -96,6 +96,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
                          config: AgreementViewConfig) {
         self.config = config
         self.viewModel = viewModel
+        self.config = AgreementViewPresenter(data: viewModel.response.data, config: config).config
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         setup()
     }

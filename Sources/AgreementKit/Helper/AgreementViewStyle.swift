@@ -16,10 +16,10 @@ public enum AgreementViewStyle {
         switch config.style {
         case .darkMode:
             return AgreementView_DarkMode(viewModel: viewModel,
-                                      config: config)
+                                          config: config)
         case .lightMode:
             return AgreementView_LightMode(viewModel: viewModel,
-                                       config: config)
+                                           config: config)
         }
     }
     
