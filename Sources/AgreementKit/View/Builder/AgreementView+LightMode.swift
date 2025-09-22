@@ -285,6 +285,7 @@ public class LightModeAgreementViewConfig: AgreementViewConfig {
         acceptButtonTitleColor = .white
         declineButtonTitleColor = UIColor(r: 173, g: 173, b: 173)
         acceptButtonBackColor = UIColor(r: 42, g: 111, b: 196)
+        acceptButtonBorderColor = .white
         declineButtonBorderColor = UIColor(r: 173, g: 173, b: 173)
         termsDescriptionColor = UIColor(r: 147, g: 147, b: 147)
         termsColor = UIColor(r: 58, g: 112, b: 160)
