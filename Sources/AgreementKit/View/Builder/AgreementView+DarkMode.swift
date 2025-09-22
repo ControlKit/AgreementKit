@@ -138,7 +138,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
             toItem: contentView,
             attribute: .top,
             multiplier: 1,
-            constant: 80).isActive = true
+            constant: 180).isActive = true
         agreementLabel.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true

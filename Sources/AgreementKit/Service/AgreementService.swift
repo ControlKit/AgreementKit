@@ -23,6 +23,7 @@ public class AgreementService: AgreementServiceProtocol {
                 "application/json",
                 forHTTPHeaderField: "Content-Type"
             )
+            
             let (data, res) = try await URLSession.shared.data(for: req)
             if (res as? HTTPURLResponse)?.statusCode == 204 {
                 return nil

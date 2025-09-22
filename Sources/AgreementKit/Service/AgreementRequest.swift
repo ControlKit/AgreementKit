@@ -7,8 +7,9 @@
 
 import Foundation
 public struct AgreementRequest {
+    public var name: String
     public var appId: String = Bundle.main.bundleIdentifier ?? String()
-    public var route: String
+    public var route: String = "https://tauri.ir/api/terms-and-conditions"
     public var deviceUUID: String = UUID().uuidString
     public var sdkVersion: String = "1.0.0"
     
