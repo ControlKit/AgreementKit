@@ -27,8 +27,11 @@ public final class DefaultAgreementViewModel: AgreementViewModel, Agreementable 
     }
     
     public var request: AgreementRequest {
-        return AgreementRequest(appId: serviceConfig.appId,
-                                   route: serviceConfig.route,
-                                   sdkVersion: serviceConfig.sdkVersion)
+        return AgreementRequest(
+            name: "",
+            appId: serviceConfig.appId,
+            route: serviceConfig.route,
+            sdkVersion: serviceConfig.sdkVersion
+        )
     }
 }

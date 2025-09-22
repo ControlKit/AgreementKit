@@ -10,23 +10,23 @@ public struct AgreementViewPresenter {
     var config: AgreementViewConfig
     public init(data: AgreementModel?, config: AgreementViewConfig) {
         self.config = config
-        if let localTitle = data?.agreementTitle,
+        if let localTitle = data?.agreement_title,
             let title = getLocalizeString(localTitle) {
             self.config.agreement = title
         }
-        if let localDescription = data?.termsDescription,
+        if let localDescription = data?.description,
            let description = getLocalizeString(localDescription) {
             self.config.termsDescription = description
         }
-        if let localTerms = data?.termsTitle,
+        if let localTerms = data?.title,
            let terms = getLocalizeString(localTerms) {
             self.config.terms = terms
         }
-        if let loaclAccept = data?.acceptButtonTitle,
+        if let loaclAccept = data?.accept_button_title,
            let acceptButtonTitle = getLocalizeString(loaclAccept) {
             self.config.acceptButtonTitle = acceptButtonTitle
         }
-        if let loaclDecline = data?.declineButtonTitle,
+        if let loaclDecline = data?.decline_button_title,
            let declineButtonTitle = getLocalizeString(loaclDecline) {
             self.config.declineButtonTitle = declineButtonTitle
         }
