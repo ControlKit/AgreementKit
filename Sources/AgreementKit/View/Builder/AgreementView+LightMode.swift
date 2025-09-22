@@ -183,7 +183,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
             toItem: termsLabel,
             attribute: .bottom,
             multiplier: 1,
-            constant: 50).isActive = true
+            constant: 40).isActive = true
         descriptionView.leadingAnchor.constraint(
             equalTo: contentView.leadingAnchor,
             constant: 24).isActive = true
