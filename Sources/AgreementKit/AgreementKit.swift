@@ -24,16 +24,14 @@ public class AgreementKit: Agreementable {
             if let response = try await self.getAgreement(request: request) {
                 let viewModel = DefaultAgreementViewModel(response: response)
                 DispatchQueue.main.async {
-                    let agreementView = AgreementViewStyle.make(
+                    let agreementVC = AgreementViewController(
                         viewModel: viewModel,
-                        config: config.viewConfig
+                        config: config
                     )
-                    let window = UIApplication.shared.windows.last!
-                    agreementView.center.y += agreementView.frame.height
-                    window.addSubview(agreementView)
-                    agreementView.fixInView(window)
-                    UIView.animate(withDuration: 1.0) {
-                        agreementView.center.y -= agreementView.frame.height
+                    let navigationVontroller = UINavigationController(rootViewController: agreementVC)
+                    navigationVontroller.modalPresentationStyle = modalPresentationStyle
+                    DispatchQueue.main.async {
+                        root.present(navigationVontroller, animated: true)
                     }
                 }
             }
