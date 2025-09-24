@@ -4,8 +4,12 @@
 //
 //  Created by Maziar Saadatfar on 9/25/25.
 //
+public protocol DismissableDelegate: AnyObject {
+    func dismiss()
+}
 public protocol ViewActionable: AgreementViewDelegate {
     var viewModel: AgreementViewModel { get set }
+    var dismissDelegate: DismissableDelegate? { get set }
 }
 extension ViewActionable {
     func viewAction() {
@@ -19,6 +23,7 @@ extension ViewActionable {
         Task {
             let request = ActionRequest(agreemntId: viewModel.response.data.id, action: .accept)
             try await viewModel.postAction(request: request)
+            dismissDelegate?.dismiss()
         }
     }
     
@@ -26,6 +31,7 @@ extension ViewActionable {
         Task {
             let request = ActionRequest(agreemntId: viewModel.response.data.id, action: .decline)
             try await viewModel.postAction(request: request)
+            dismissDelegate?.dismiss()
         }
     }
 }
