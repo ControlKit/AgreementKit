@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AgreementViewController: UIViewController, ViewActionable, DismissableDelegate {
+class AgreementViewController: UIViewController,
+                               ViewActionable,
+                               DismissableDelegate {
     public weak var dismissDelegate: DismissableDelegate?
     var viewModel: AgreementViewModel
     let config: AgreementServiceConfig
@@ -34,6 +36,9 @@ class AgreementViewController: UIViewController, ViewActionable, DismissableDele
     }
     
     func dismiss() {
-        dismiss(animated: true)
+        DispatchQueue.main.async { [weak self] in
+            guard let self else { return }
+            self.dismiss(animated: true)
+        }
     }
 }
