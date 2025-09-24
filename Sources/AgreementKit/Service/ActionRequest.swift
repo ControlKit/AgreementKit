@@ -7,18 +7,29 @@
 import Foundation
 public struct ActionRequest {
     public var appId: String = Bundle.main.bundleIdentifier ?? String()
-    public var route: String
+    public var agreemntId: String
+    public var action: AgreementAction
+    public var route: String = "https://tauri.ir/api/terms-and-conditions/"
     public var deviceUUID: String = UUID().uuidString
-    public var sdkVersion: String = "1.0.0"
+    public var sdkVersion: String = agreementKit_Version
     
-    var dictionary: [String: String] {
+    var headers: [String: String] {
         return ["x-app-id": appId,
                 "x-sdk-version": sdkVersion,
                 "x-version": "1",
                 "x-device-uuid": deviceUUID]
     }
     
-    var nsDictionary: NSDictionary {
-        return dictionary as NSDictionary
+    var params: [String: String] {
+        return [
+            "action": action.rawValue
+        ]
     }
 }
+
+public enum AgreementAction: String {
+    case view = "VIEW"
+    case accept = "ACCEPT"
+    case decline = "DECLINE"
+}
+  

@@ -14,11 +14,11 @@ public class ActionService: ActionServiceProtocol {
     public init() {}
     public func action(request: ActionRequest) async throws -> ActionResponse? {
         do {
-            guard let url = URL(string: request.route) else {
+            guard let url = URL(string: request.route + request.agreemntId) else {
                 return ActionResponse()
             }
             var req = URLRequest(url: url)
-            req.allHTTPHeaderFields = request.dictionary
+            req.allHTTPHeaderFields = request.headers
             req.setValue(
                 "application/json",
                 forHTTPHeaderField: "Content-Type"
@@ -27,6 +27,8 @@ public class ActionService: ActionServiceProtocol {
             if (res as? HTTPURLResponse)?.statusCode == 204 {
                 return nil
             }
+            req.httpMethod = "POST"
+            req.httpBody = try JSONEncoder().encode(request.params)
             if let AgreementResponse = try? JSONDecoder().decode(ActionResponse.self, from: data) {
                 print(AgreementResponse)
                 return AgreementResponse

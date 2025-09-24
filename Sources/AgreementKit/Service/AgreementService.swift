@@ -24,12 +24,11 @@ public class AgreementService: AgreementServiceProtocol {
                 return nil
             }
             var req = URLRequest(url: url)
-            req.allHTTPHeaderFields = request.dictionary
+            req.allHTTPHeaderFields = request.headers
             req.setValue(
                 "application/json",
                 forHTTPHeaderField: "Content-Type"
             )
-            
             let (data, res) = try await URLSession.shared.data(for: req)
             if (res as? HTTPURLResponse)?.statusCode == 204 {
                 return nil

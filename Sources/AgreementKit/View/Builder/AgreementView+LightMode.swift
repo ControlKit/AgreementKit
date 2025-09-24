@@ -8,10 +8,10 @@ import Foundation
 import UIKit
 
 public class AgreementView_LightMode: UIView, AgreementViewProtocol {
+    public var delegate: AgreementViewDelegate?
     var config: AgreementViewConfig
     var viewModel: AgreementViewModel
     
-    weak public var delegate: AgreementDelegate?
     lazy var contentView: UIView = {
         let contentView = UIView()
         contentView.backgroundColor = config.contentViewBackColor
@@ -69,7 +69,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
         button.setCurvedView(cornerRadius: config.acceptButtonRadius,
                              borderWidth: config.acceptButtonBorderWidth,
                              borderColor: config.acceptButtonBorderColor)
-//        button.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+        button.addTarget(self, action: #selector(acceptButtonPressed), for: .touchUpInside)
         button.titleLabel?.font = config.acceptButtonFont
         button.setTitleColor(config.acceptButtonTitleColor, for: .normal)
         return button
@@ -83,7 +83,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
         button.setCurvedView(cornerRadius: config.declineButtonRadius,
                              borderWidth: config.declineButtonBorderWidth,
                              borderColor: config.declineButtonBorderColor)
-//        button.addTarget(self, action: #selector(openLink), for: .touchUpInside)
+        button.addTarget(self, action: #selector(declineButtonPressed), for: .touchUpInside)
         button.titleLabel?.font = config.declineButtonFont
         button.setTitleColor(config.declineButtonTitleColor, for: .normal)
         return button
@@ -275,6 +275,14 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
             attribute: .notAnAttribute,
             multiplier: 1,
             constant: 120).isActive = true
+    }
+    @objc
+    func acceptButtonPressed() {
+        delegate?.acceptAction()
+    }
+    @objc
+    func declineButtonPressed() {
+        delegate?.declineAction()
     }
 }
 

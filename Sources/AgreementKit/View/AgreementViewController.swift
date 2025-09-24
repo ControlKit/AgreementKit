@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AgreementViewController: UIViewController {
+class AgreementViewController: UIViewController, ViewActionable {    
     var viewModel: AgreementViewModel
     let config: AgreementServiceConfig
 
@@ -23,9 +23,11 @@ class AgreementViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let AgreementView = AgreementViewStyle.make(viewModel: viewModel,
+        let agreementView = AgreementViewStyle.make(viewModel: viewModel,
                                                     config: config.viewConfig)
-        view.addSubview(AgreementView)
-        AgreementView.fixInView(view)
+        view.addSubview(agreementView)
+        agreementView.delegate = self
+        agreementView.fixInView(view)
+        viewAction()
     }
 }
