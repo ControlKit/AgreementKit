@@ -33,9 +33,9 @@ public class AgreementService: AgreementServiceProtocol {
             if (res as? HTTPURLResponse)?.statusCode == 204 {
                 return nil
             }
-            if let AgreementResponse = try? JSONDecoder().decode(AgreementResponse.self, from: data) {
-                print(AgreementResponse)
-                return AgreementResponse
+            if let response = try? JSONDecoder().decode(AgreementResponse.self, from: data) {
+                print(response)
+                return response
             } else {
                 print("Invalid Response")
                 return nil
