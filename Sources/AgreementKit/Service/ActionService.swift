@@ -29,9 +29,9 @@ public class ActionService: ActionServiceProtocol {
             }
             req.httpMethod = "POST"
             req.httpBody = try JSONEncoder().encode(request.params)
-            if let AgreementResponse = try? JSONDecoder().decode(ActionResponse.self, from: data) {
-                print(AgreementResponse)
-                return AgreementResponse
+            if let response = try? JSONDecoder().decode(ActionResponse.self, from: data) {
+                print(response)
+                return response
             } else {
                 print("Invalid Response")
                 return nil

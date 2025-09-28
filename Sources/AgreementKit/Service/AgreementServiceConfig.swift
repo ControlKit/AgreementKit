@@ -19,7 +19,7 @@ public struct AgreementServiceConfig {
     }
     public var name: String
     public var appId: String
-    public var version: String = "1"
+    public var version: String
     public var sdkVersion: String = agreementKit_Version
     public var viewConfig: AgreementViewConfig
 }
