@@ -12,11 +12,12 @@ public struct ActionRequest {
     public var route: String = "https://tauri.ir/api/terms-and-conditions/"
     public var deviceUUID: String = UUID().uuidString
     public var sdkVersion: String = agreementKit_Version
+    public var applicationVersion: String = Bundle.main.releaseVersionNumber ?? String()
     
     var headers: [String: String] {
         return ["x-app-id": appId,
                 "x-sdk-version": sdkVersion,
-                "x-version": "1",
+                "x-version": applicationVersion,
                 "x-device-uuid": deviceUUID]
     }
     
