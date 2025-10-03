@@ -34,7 +34,7 @@ public struct AgreementViewPresenter {
     
     func getLocalizeString(_ localize: AgreementLocalString) -> String? {
         guard let localizeString = localize.first(where: { $0.language == config.lang }) else {
-            if let defaultLang = localize.first(where: { $0.language == "en" }) {
+            if let defaultLang = localize.first {
                 return defaultLang.content
             } else {
                 return nil
