@@ -25,19 +25,21 @@ public class ActionService: ActionServiceProtocol {
             )
             let (data, res) = try await URLSession.shared.data(for: req)
             if (res as? HTTPURLResponse)?.statusCode == 204 {
+                print("Agreement Action Response --> 204")
                 return nil
             }
             req.httpMethod = "POST"
             req.httpBody = try JSONEncoder().encode(request.params)
             if let response = try? JSONDecoder().decode(ActionResponse.self, from: data) {
+                print("Agreement Action Response --> 200")
                 print(response)
                 return response
             } else {
-                print("Invalid Response")
+                print("Agreement Action Response --> Decode Error")
                 return nil
             }
         } catch {
-            print("Failed to Send POST Request \(error)")
+            print("Failed to Send Agreement Action POST Request \(error)")
             return nil
         }
     }

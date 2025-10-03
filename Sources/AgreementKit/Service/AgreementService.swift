@@ -31,17 +31,19 @@ public class AgreementService: AgreementServiceProtocol {
             )
             let (data, res) = try await URLSession.shared.data(for: req)
             if (res as? HTTPURLResponse)?.statusCode == 204 {
+                print("Agreement Response --> 204")
                 return nil
             }
             if let response = try? JSONDecoder().decode(AgreementResponse.self, from: data) {
+                print("Agreement Response --> 200")
                 print(response)
                 return response
             } else {
-                print("Invalid Response")
+                print("Agreement Response --> Decode Error")
                 return nil
             }
         } catch {
-            print("Failed to Send POST Request \(error)")
+            print("Failed to Agreement Request \(error)")
             return nil
         }
     }
