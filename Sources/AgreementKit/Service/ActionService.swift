@@ -23,13 +23,13 @@ public class ActionService: ActionServiceProtocol {
                 "application/json",
                 forHTTPHeaderField: "Content-Type"
             )
+            req.httpMethod = "POST"
+            req.httpBody = try JSONEncoder().encode(request.params)
             let (data, res) = try await URLSession.shared.data(for: req)
             if (res as? HTTPURLResponse)?.statusCode == 204 {
                 print("Agreement Action Response --> 204")
                 return nil
             }
-            req.httpMethod = "POST"
-            req.httpBody = try JSONEncoder().encode(request.params)
             if let response = try? JSONDecoder().decode(ActionResponse.self, from: data) {
                 print("Agreement Action Response --> 200")
                 print(response)

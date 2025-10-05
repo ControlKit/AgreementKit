@@ -22,7 +22,10 @@ public class AgreementKit: Agreementable {
                 sdkVersion: config.sdkVersion
             )
             if let response = try await self.getAgreement(request: request) {
-                let viewModel = DefaultAgreementViewModel(response: response)
+                let viewModel = DefaultAgreementViewModel(
+                    serviceConfig: config,
+                    response: response
+                )
                 DispatchQueue.main.async {
                     let agreementVC = AgreementViewController(
                         viewModel: viewModel,

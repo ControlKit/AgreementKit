@@ -6,7 +6,7 @@
 //
 import Foundation
 public struct ActionRequest {
-    public var appId: String = Bundle.main.bundleIdentifier ?? String()
+    public var appId: String
     public var agreemntId: String
     public var action: AgreementAction
     public var route: String = "https://tauri.ir/api/terms-and-conditions/"

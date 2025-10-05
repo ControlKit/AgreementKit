@@ -7,10 +7,7 @@
 
 import UIKit
 
-class AgreementViewController: UIViewController,
-                               ViewActionable,
-                               DismissableDelegate {
-    public weak var dismissDelegate: DismissableDelegate?
+class AgreementViewController: UIViewController, AgreementViewDelegate {
     var viewModel: AgreementViewModel
     let config: AgreementServiceConfig
 
@@ -28,11 +25,20 @@ class AgreementViewController: UIViewController,
         super.viewDidLoad()
         let agreementView = AgreementViewStyle.make(viewModel: viewModel,
                                                     config: config.viewConfig)
-        self.dismissDelegate = self
         view.addSubview(agreementView)
         agreementView.delegate = self
         agreementView.fixInView(view)
-        viewAction()
+        viewModel.viewAction()
+    }
+    
+    func acceptAction() {
+        viewModel.acceptAction()
+        dismiss()
+    }
+    
+    func declineAction() {
+        viewModel.declineAction()
+        dismiss()
     }
     
     func dismiss() {
