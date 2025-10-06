@@ -289,7 +289,7 @@ public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
 }
 
 public class DarkModeAgreementViewConfig: AgreementViewConfig {
-    public override init(lang: String) {
+    public override init(lang: CKLanguage) {
         super.init(lang: lang)
         style = .darkMode
     }

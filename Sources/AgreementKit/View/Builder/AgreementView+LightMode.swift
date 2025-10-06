@@ -288,7 +288,7 @@ public class AgreementView_LightMode: UIView, AgreementViewProtocol {
 
 
 public class LightModeAgreementViewConfig: AgreementViewConfig {
-    public override init(lang: String) {
+    public override init(lang: CKLanguage) {
         super.init(lang: lang)
         style = .lightMode
         acceptButtonTitleColor = .white

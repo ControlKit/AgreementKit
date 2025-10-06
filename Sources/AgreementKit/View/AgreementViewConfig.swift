@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 public class AgreementViewConfig {
-    public init(lang: String) {
+    public init(lang: CKLanguage) {
         self.lang = lang
     }
     
-    public let lang: String
+    public let lang: CKLanguage
     public var style: AgreementViewStyle = .darkMode
     public var contentViewBackColor: UIColor = UIColor(r: 25, g: 29, b: 32, a: 1.0)
     

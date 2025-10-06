@@ -23,7 +23,7 @@ public enum AgreementViewStyle {
         }
     }
     
-    public static func getViewConfigWithStyle(style: AgreementViewStyle, lang: String) -> AgreementViewConfig {
+    public static func getViewConfigWithStyle(style: AgreementViewStyle, lang: CKLanguage) -> AgreementViewConfig {
         switch style {
         case .darkMode:
             DarkModeAgreementViewConfig(lang: lang)
