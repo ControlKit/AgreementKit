@@ -4,6 +4,7 @@
 //
 //  Created by Maziar Saadatfar on 9/25/25.
 //
+import ControlKitBase
 public protocol Actionable: AnyObject {
     func viewAction()
     func acceptAction()
@@ -12,39 +13,48 @@ public protocol Actionable: AnyObject {
 
 public extension Actionable where Self: AgreementViewModel {
     @discardableResult
-    func postAction(request: ActionRequest) async throws -> ActionResponse? {
-        return try await actionService.action(request: request)
+    func postAction(request: ActionRequest) async throws -> Result<ActionResponse>? {
+        return try await actionService.execute(request: request)
     }
     func viewAction() {
         Task {
-            let request = ActionRequest(
+            var request = ActionRequest(
+                route: .force_update,
                 appId: serviceConfig.appId,
-                agreemntId: response.data.id,
-                action: .view
+                sdkVersion: agreementKit_Version,
+                action: .view,
+                itemId: self.response.data.id,
             )
-            try await postAction(request: request)
+            request.extraParameter = "\(request.itemId ?? "")"
+            let _: Result<ActionResponse> = try await actionService.execute(request: request)
         }
     }
     
     func acceptAction() {
         Task {
-            let request = ActionRequest(
+            var request = ActionRequest(
+                route: .force_update,
                 appId: serviceConfig.appId,
-                agreemntId: response.data.id,
-                action: .accept
+                sdkVersion: agreementKit_Version,
+                action: .accept,
+                itemId: self.response.data.id,
             )
-            try await postAction(request: request)
+            request.extraParameter = "\(request.itemId ?? "")"
+            let _: Result<ActionResponse> = try await actionService.execute(request: request)
         }
     }
     
     func declineAction() {
         Task {
-            let request = ActionRequest(
+            var request = ActionRequest(
+                route: .force_update,
                 appId: serviceConfig.appId,
-                agreemntId: response.data.id,
-                action: .decline
+                sdkVersion: agreementKit_Version,
+                action: .decline,
+                itemId: self.response.data.id,
             )
-            try await postAction(request: request)
+            request.extraParameter = "\(request.itemId ?? "")"
+            let _: Result<ActionResponse> = try await actionService.execute(request: request)
         }
     }
 }

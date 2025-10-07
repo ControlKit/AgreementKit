@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ControlKitBase
 public struct AgreementServiceConfig {
     public init(style: AgreementViewStyle = .darkMode,
                 name: String,

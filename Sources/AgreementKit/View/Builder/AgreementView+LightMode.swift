@@ -6,6 +6,7 @@
 //
 import Foundation
 import UIKit
+import ControlKitBase
 
 public class AgreementView_LightMode: UIView, AgreementViewProtocol {
     public var delegate: AgreementViewDelegate?

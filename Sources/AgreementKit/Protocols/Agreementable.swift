@@ -6,14 +6,14 @@
 //
 
 import Foundation
-
+import ControlKitBase
 public protocol Agreementable: AnyObject {
-    var agreementService: AgreementServiceProtocol { get set }
-    func getAgreement(request: AgreementRequest) async throws -> AgreementResponse?
+    var agreementService: GenericServiceProtocol { get set }
+    func getAgreement(request: AgreementRequest) async throws -> Result<AgreementResponse>?
 }
 
 extension Agreementable {
-    public func getAgreement(request: AgreementRequest) async throws -> AgreementResponse? {
-        return try await agreementService.getAgreement(request: request)
+    public func getAgreement(request: AgreementRequest) async throws -> Result<AgreementResponse>? {
+        return try await agreementService.execute(request: request)
     }
 }

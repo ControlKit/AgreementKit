@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ControlKitBase
 import UIKit
 public class AgreementViewConfig {
     public init(lang: CKLanguage) {

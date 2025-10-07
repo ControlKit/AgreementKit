@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import ControlKitBase
 
 public class AgreementView_DarkMode: UIView, AgreementViewProtocol {
     public var delegate: (any AgreementViewDelegate)?
@@ -292,21 +293,5 @@ public class DarkModeAgreementViewConfig: AgreementViewConfig {
     public override init(lang: CKLanguage) {
         super.init(lang: lang)
         style = .darkMode
-    }
-}
-
-class ImageHelper {
-    static var resolvedBundle: Bundle {
-#if SWIFT_PACKAGE
-        return Bundle.module
-#else
-        return Bundle(for: self)
-#endif
-    }
-    
-    static func image(_ name: String) -> UIImage? {
-        return UIImage(named: name,
-                       in: resolvedBundle,
-                       compatibleWith: nil)
     }
 }

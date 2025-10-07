@@ -3,11 +3,12 @@
 import Foundation
 import UIKit
 import Combine
+import ControlKitBase
 
 public let agreementKit_Version: String = "1.0.0"
 public class AgreementKit: Agreementable {
-    public var agreementService: AgreementServiceProtocol
-    public init(agreementService: AgreementServiceProtocol = AgreementService()) {
+    public var agreementService: GenericServiceProtocol
+    public init(agreementService: GenericServiceProtocol = GenericService()) {
         self.agreementService = agreementService
     }
     
@@ -21,7 +22,7 @@ public class AgreementKit: Agreementable {
                 appId: config.appId,
                 sdkVersion: config.sdkVersion
             )
-            if let response = try await self.getAgreement(request: request) {
+            if let response = try await self.getAgreement(request: request)?.value {
                 let viewModel = DefaultAgreementViewModel(
                     serviceConfig: config,
                     response: response
