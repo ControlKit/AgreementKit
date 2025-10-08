@@ -19,7 +19,7 @@ public extension Actionable where Self: AgreementViewModel {
     func viewAction() {
         Task {
             var request = ActionRequest(
-                route: .force_update,
+                route: .agreement,
                 appId: serviceConfig.appId,
                 sdkVersion: agreementKit_Version,
                 action: .view,
@@ -33,7 +33,7 @@ public extension Actionable where Self: AgreementViewModel {
     func acceptAction() {
         Task {
             var request = ActionRequest(
-                route: .force_update,
+                route: .agreement,
                 appId: serviceConfig.appId,
                 sdkVersion: agreementKit_Version,
                 action: .accept,
@@ -47,7 +47,7 @@ public extension Actionable where Self: AgreementViewModel {
     func declineAction() {
         Task {
             var request = ActionRequest(
-                route: .force_update,
+                route: .agreement,
                 appId: serviceConfig.appId,
                 sdkVersion: agreementKit_Version,
                 action: .decline,
