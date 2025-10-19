@@ -205,7 +205,7 @@ viewConfig.declineButtonRadius = 12.0
 
 ### Multi-Language Support
 
-AgreementKit automatically handles multiple languages:
+AgreementKit automatically handles multiple languages with comprehensive localization:
 
 ```swift
 // English
@@ -231,7 +231,33 @@ let config = AgreementServiceConfig(
     appId: "your-app-id",
     language: .french
 )
+
+// German
+let config = AgreementServiceConfig(
+    style: .darkMode,
+    name: "MyApp",
+    appId: "your-app-id",
+    language: .german
+)
+
+// Chinese
+let config = AgreementServiceConfig(
+    style: .darkMode,
+    name: "MyApp",
+    appId: "your-app-id",
+    language: .chinese
+)
+
+// Japanese
+let config = AgreementServiceConfig(
+    style: .darkMode,
+    name: "MyApp",
+    appId: "your-app-id",
+    language: .japanese
+)
 ```
+
+**Supported Languages**: English, Spanish, French, German, Italian, Portuguese, Dutch, Russian, Chinese, Japanese, Korean, Arabic
 
 ## 🔧 Configuration Reference
 
