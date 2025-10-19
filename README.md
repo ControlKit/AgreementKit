@@ -33,7 +33,7 @@ AgreementKit is an iOS SDK that simplifies the implementation of Terms of Servic
 Add AgreementKit to your project using Swift Package Manager:
 
 1. In Xcode, go to **File → Add Package Dependencies**
-2. Enter the repository URL: `https://github.com/yourusername/AgreementKit.git`
+2. Enter the repository URL: `https://github.com/ControlKit/AgreementKit.git`
 3. Select the version and add to your target
 
 ### CocoaPods
@@ -339,11 +339,20 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a Pull Request to our [GitHub repository](https://github.com/ControlKit/AgreementKit).
 
 ## 📞 Support
 
-For support, email support@agreementkit.com or create an issue on GitHub.
+For support, email support@agreementkit.com or create an issue on [GitHub](https://github.com/ControlKit/AgreementKit).
+
+## 🤖 Cross-Platform Support
+
+AgreementKit is available for both iOS and Android platforms:
+
+- **iOS**: [https://github.com/ControlKit/AgreementKit](https://github.com/ControlKit/AgreementKit) (Swift)
+- **Android**: [https://github.com/ControlKit/AgreementKit-android](https://github.com/ControlKit/AgreementKit-android) (Kotlin)
+
+Both versions provide the same functionality and API design, ensuring consistent user experience across platforms.
 
 ## 🎯 Roadmap
 
