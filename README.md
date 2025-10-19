@@ -1,4 +1,4 @@
-# AgreementKit 📋
+# AgreementKit  <img src='https://github.com/maziar/ReadmeFiles/blob/main/AgreementKit.svg' width='30'/>
 
 A powerful and customizable iOS SDK for displaying Terms of Service and Privacy Policy agreements with minimal code integration. Save development time and ensure compliance with just a few lines of code.
 
