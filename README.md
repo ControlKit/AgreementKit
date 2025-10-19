@@ -325,13 +325,39 @@ Your server should return:
 
 ## 📱 Requirements
 
-- iOS 13.0+
-- Xcode 12.0+
-- Swift 5.3+
+### iOS Version
+- **Minimum iOS**: 13.0+
+- **Recommended iOS**: 15.0+
+- **Xcode**: 12.0+
+- **Swift**: 5.3+
+
+### Supported Languages
+AgreementKit supports multiple languages out of the box:
+
+- 🇺🇸 **English** (`.english`)
+- 🇪🇸 **Spanish** (`.spanish`) 
+- 🇫🇷 **French** (`.french`)
+- 🇩🇪 **German** (`.german`)
+- 🇮🇹 **Italian** (`.italian`)
+- 🇵🇹 **Portuguese** (`.portuguese`)
+- 🇳🇱 **Dutch** (`.dutch`)
+- 🇷🇺 **Russian** (`.russian`)
+- 🇨🇳 **Chinese** (`.chinese`)
+- 🇯🇵 **Japanese** (`.japanese`)
+- 🇰🇷 **Korean** (`.korean`)
+- 🇦🇷 **Arabic** (`.arabic`)
+
+### Device Support
+- **iPhone**: All models running iOS 13.0+
+- **iPad**: All models running iPadOS 13.0+
+- **iPod Touch**: 7th generation and later
 
 ## 🔗 Dependencies
 
-- ControlKitBase (for networking and base functionality)
+- **ControlKitBase**: Core networking and base functionality
+- **UIKit**: iOS user interface framework
+- **Foundation**: Core Swift framework
+- **Combine**: Reactive programming framework (iOS 13+)
 
 ## 📄 License
 
