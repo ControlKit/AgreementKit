@@ -6,23 +6,18 @@
 //
 
 import Foundation
-
-public typealias AgreementLocalString = [AgreementLocalizedText]
+import ControlKitBase
 
 public struct AgreementResponse: Codable {
     public var data: AgreementModel
 }
 public struct AgreementModel: Codable {
     public let id: String
-    public let agreement_title: AgreementLocalString?
-    public let title: AgreementLocalString?
-    public let description: AgreementLocalString?
-    public let accept_button_title: AgreementLocalString?
-    public let decline_button_title: AgreementLocalString?
+    public let agreement_title: LocalString?
+    public let title: LocalString?
+    public let description: LocalString?
+    public let accept_button_title: LocalString?
+    public let decline_button_title: LocalString?
     public let version: Int?
     public let created_at: String?
-}
-public struct AgreementLocalizedText: Codable {
-    public let language: String?
-    public let content: String?
 }

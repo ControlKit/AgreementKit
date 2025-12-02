@@ -5,7 +5,7 @@
 //  Created by Maziar Saadatfar on 8/26/25.
 //
 import Foundation
-import UIKit
+import ControlKitBase
 public struct AgreementViewPresenter {
     var config: AgreementViewConfig
     public init(data: AgreementModel?, config: AgreementViewConfig) {
@@ -32,7 +32,7 @@ public struct AgreementViewPresenter {
         }
     }
     
-    func getLocalizeString(_ localize: AgreementLocalString) -> String? {
+    func getLocalizeString(_ localize: LocalString) -> String? {
         guard let localizeString = localize.first(where: { $0.language == config.lang.rawValue }) else {
             if let defaultLang = localize.first {
                 return defaultLang.content
